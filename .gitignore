@@ -1,0 +1,23 @@
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+node_modules
+
+# foundry
+**/cache_forge
+**/out
+
+# hardhat
+**/artifacts
+**/cache
+**/ignition/deployments/
+**/coverage
+**/coverage.json
+
+# misc
+cspell.json
+.DS_STORE
