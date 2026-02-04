@@ -1,0 +1,42 @@
+{
+  "extends": "solhint:recommended",
+  "rules": {
+    "max-line-length": [
+      "error",
+      130
+    ],
+    "function-max-lines": [
+      "warn",
+      80
+    ],
+    "max-states-count": [
+      "off"
+    ],
+    "import-path-check": [
+      "off"
+    ],
+    "interface-starts-with-i": "error",
+    "modifier-name-mixedcase": "error",
+    "private-vars-leading-underscore": "warn",
+    "not-rely-on-time": "warn",
+    "func-visibility": [
+      "warn",
+      {
+        "ignoreConstructors": true
+      }
+    ],
+    "gas-indexed-events": "off",
+    "gas-calldata-parameters": "off",
+    "use-natspec": [
+      "warn",
+      {
+        "author": {
+          "enabled": false
+        },
+        "notice": {
+          "enabled": false
+        }
+      }
+    ]
+  }
+}
