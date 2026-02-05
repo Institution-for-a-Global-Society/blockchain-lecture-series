@@ -1,28 +1,66 @@
-# Lecture 2
+# Lecture 2: スマートコントラクト
 
 ## 1. 開発環境のセットアップ
 
 リポジトリを用いて、開発環境のセットアップを続けましょう。
 
+### 1-1. ディレクトリの移動
+
 ```sh
-# ディレクトリを移動
 $ cd ./blockchain-lecture-series/lectures/2
-# 必要パッケージをインストール
+```
+
+### 1-2. Volta のインストール
+
+パッケージバージョン管理ツール Volta をインストールしましょう（参考記事: [Zenn](https://zenn.dev/longbridge/articles/30c70144c97d32)）。
+
+```sh
+# バージョンを確認
+$ volta --version
+```
+
+### 1-3. Node のインストール
+
+各種スクリプト（TypeScript環境）実行用に Node.js をインストールしましょう。
+
+```sh
+# node(v22.15.0)をインストール
+$ volta install node@22.15.0
+# バージョンを確認
+$ node -v
+```
+
+### 1-4. Yarn のインストール
+
+パッケージ管理ツール Yarn をインストールしましょう。
+
+```sh
+# Yarn(v4.7.0)をインストール
+$ volta install yarn@4.7.0
+# バージョンを確認
+$ yarn -v
+```
+
+### 1-5. 必要パッケージのインストール
+
+```sh
 $ yarn
 ```
 
-> [!IMPORTANT]
-> 上記に加えて、TypeScript実行用にNode環境を[参考文献](https://qiita.com/282Haniwa/items/a764cf7ef03939e4cbb1)に沿って構築します。`nodenv`を用いて、Node **`v22.15.0`** をインストールしましょう。
+### 1-6. Foundry のインストール
 
-## 2. ローカルネットワークの立ち上げ
-
-ローカルネットワーク上（外部公開されない）でブロックチェーンを立ち上げることができます。
+スマートコントラクト開発環境を提供する Foundry をインストールしましょう（参考記事: [Foundry](https://getfoundry.sh/introduction/installation/)）。
 
 ```sh
-$ yarn dev
+# foundryをインストール
+$ curl -L https://foundry.paradigm.xyz | bash
+# 各種ツール群 (forge, cast, anvil, and chisel) をインストール
+$ foundryup
+# バージョンを確認
+$ forge --version
 ```
 
-## 3. スマートコントラクトのコンパイル
+## 2. スマートコントラクトのコンパイル
 
 スマートコントラクトがコンパイル（ビルド）できるかを確認しましょう。
 
@@ -30,9 +68,17 @@ $ yarn dev
 $ yarn compile
 ```
 
+## 3. ローカルネットワークの立ち上げ
+
+ローカルネットワーク上（外部公開されない）でブロックチェーンを立ち上げることができます。
+
+```sh
+$ yarn dev
+```
+
 ## 4. スマートコントラクトのデプロイ
 
-2で立ち上げたローカルネットワークに対して、指定したスマートコントラクトをデプロイしてみましょう。
+立ち上げたローカルネットワークに対して、指定したスマートコントラクトをデプロイしてみましょう。
 
 ```sh
 # contracts/Greeting.solをデプロイ
@@ -68,6 +114,9 @@ $ yarn deploy:greeting
 
 > [!NOTE]
 > 各コントラクトに対して、簡潔なスクリプトを実行して挙動を確認することができます。
+
+> [!IMPORTANT]
+> 各スクリプトの実行前に `yarn deploy-status` を実行して、コントラクトアドレスを指定しましょう。
 
 ```sh
 # contracts/Greeting.solに対するスクリプトを実行
