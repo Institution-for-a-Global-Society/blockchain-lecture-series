@@ -17,6 +17,7 @@
         "format-sol:dry-run": "prettier -c --plugin=prettier-plugin-solidity 'lectures/**/*.sol'",
         "format-misc": "prettier -w '**/*.ts' '**/*.md' '**/*.json'",
         "format-misc:dry-run": "prettier -c '**/*.ts' '**/*.md' '**/*.json'",
+        "deploy-status": "hardhat ignition status chain-31337",
         "deploy:greeting": "hardhat ignition deploy --network localhost ./ignition/modules/Greeting.ts",
         "deploy:greetingAns": "hardhat ignition deploy --network localhost ./ignition/modules/GreetingAns.ts",
         "deploy:counter": "hardhat ignition deploy --network localhost ./ignition/modules/Counter.ts",
