@@ -3,7 +3,7 @@ import hre from "hardhat";
 async function main() {
   const publicClient = await hre.viem.getPublicClient();
 
-  const tokenContract = await hre.viem.getContractAt("TokenSol", "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0");
+  const tokenContract = await hre.viem.getContractAt("TokenAns", "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0");
 
   const name = await tokenContract.read.name();
   const symbol = await tokenContract.read.symbol();

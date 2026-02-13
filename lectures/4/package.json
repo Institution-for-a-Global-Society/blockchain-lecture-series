@@ -19,13 +19,13 @@
         "format-misc:dry-run": "prettier -c '**/*.ts' '**/*.md' '**/*.json'",
         "deploy-status": "hardhat ignition status chain-31337",
         "deploy:token": "hardhat ignition deploy --network localhost ./ignition/modules/Token.ts",
-        "deploy:tokenSol": "hardhat ignition deploy --network localhost ./ignition/modules/TokenSol.ts",
+        "deploy:tokenAns": "hardhat ignition deploy --network localhost ./ignition/modules/TokenAns.ts",
         "deploy:erc20": "hardhat ignition deploy --network localhost ./ignition/modules/ERC20.ts",
-        "deploy:erc20Sol": "hardhat ignition deploy --network localhost ./ignition/modules/ERC20Sol.ts",
+        "deploy:erc20Ans": "hardhat ignition deploy --network localhost ./ignition/modules/ERC20Ans.ts",
         "run:token": "hardhat run --network localhost ./scripts/Token.ts",
-        "run:tokenSol": "hardhat run --network localhost ./scripts/TokenSol.ts",
+        "run:tokenAns": "hardhat run --network localhost ./scripts/TokenAns.ts",
         "run:erc20": "hardhat run --network localhost ./scripts/ERC20.ts",
-        "run:erc20Sol": "hardhat run --network localhost ./scripts/ERC20Sol.ts"
+        "run:erc20Ans": "hardhat run --network localhost ./scripts/ERC20Ans.ts"
     },
     "devDependencies": {
         "@nomicfoundation/hardhat-foundry": "^1.1.3",
