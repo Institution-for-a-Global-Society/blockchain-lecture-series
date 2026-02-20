@@ -1,0 +1,7 @@
+lib
+artifacts
+out
+ignition/deployments
+cache
+cache_forge
+node_modules
