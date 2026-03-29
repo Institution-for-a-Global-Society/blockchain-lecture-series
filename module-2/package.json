@@ -1,0 +1,30 @@
+{
+    "name": "module-2",
+    "version": "1.0.0",
+    "private": true,
+    "license": "UNLICENSED",
+    "description": "A set of code examples & exercises for module #2.",
+    "repository": "https://github.com/Institution-for-a-Global-Society/blockchain-lecture-series.git",
+    "homepage": "https://github.com/Institution-for-a-Global-Society/blockchain-lecture-series.git#readme",
+    "packageManager": "yarn@4.7.0",
+    "scripts": {
+        "dev": "anvil",
+        "compile": "forge b --via-ir --optimize --sizes",
+        "clean": "forge clean",
+        "lint": "yarn run -T solhint --fix 'contracts/*.sol'",
+        "lint:dry-run": "yarn run -T solhint 'contracts/*.sol'",
+        "format-sol": "yarn run -T prettier -w --plugin=prettier-plugin-solidity 'contracts/*'",
+        "format-sol:dry-run": "yarn run -T prettier -c --plugin=prettier-plugin-solidity 'contracts/*'",
+        "format-misc": "yarn run -T prettier -w '**/*.ts' '**/*.md' '**/*.json'",
+        "format-misc:dry-run": "yarn run -T prettier -c '**/*.ts' '**/*.md' '**/*.json'",
+        "deploy-status": "yarn run -T hardhat ignition status chain-31337",
+        "deploy:counter": "yarn run -T hardhat ignition deploy --network localhost ./ignition/modules/Counter.ts",
+        "deploy:counterOwnable": "yarn run -T hardhat ignition deploy --network localhost ./ignition/modules/CounterOwnable.ts",
+        "deploy:counterPausable": "yarn run -T hardhat ignition deploy --network localhost ./ignition/modules/CounterPausable.ts",
+        "deploy:erc20": "yarn run -T hardhat ignition deploy --network localhost ./ignition/modules/ERC20.ts",
+        "run:counter": "yarn run -T hardhat run --network localhost ./scripts/Counter.ts",
+        "run:counterOwnable": "yarn run -T hardhat run --network localhost ./scripts/CounterOwnable.ts",
+        "run:counterPausable": "yarn run -T hardhat run --network localhost ./scripts/CounterPausable.ts",
+        "run:erc20": "yarn run -T hardhat run --network localhost ./scripts/ERC20.ts"
+    }
+}
